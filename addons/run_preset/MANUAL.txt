@@ -1,0 +1,7 @@
+GitHub: https://github.com/rylydou/godot-run-preset
+
+
+----- FAQ -----
+
+Q: How do I change the play and edit shortcuts?
+A: Open `toolbar.tscn` and edit the shortcuts under the 'Play' and 'Edit' buttons.

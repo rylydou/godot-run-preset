@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkbsuap1dr50c"]
+
+[ext_resource type="Script" path="res://addons/run_preset/toolbar.gd" id="1_agtmp"]
+[ext_resource type="Texture2D" uid="uid://cuoa4vrhqnbfl" path="res://addons/run_preset/icons/play.svg" id="1_juh17"]
+[ext_resource type="Texture2D" uid="uid://csl17awbswgq6" path="res://addons/run_preset/icons/edit.svg" id="2_8u6u2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3chu"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_5qysy"]
+device = -1
+keycode = 4194335
+
+[sub_resource type="Shortcut" id="Shortcut_mssb2"]
+events = [SubResource("InputEventKey_5qysy")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_atwql"]
+device = -1
+shift_pressed = true
+keycode = 4194335
+
+[sub_resource type="Shortcut" id="Shortcut_l3dc2"]
+events = [SubResource("InputEventKey_atwql")]
+
+[node name="Toolbar" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p3chu")
+script = ExtResource("1_agtmp")
+
+[node name="Box" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Play Button" type="Button" parent="Box"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Run main scene"
+theme_type_variation = &"FlatButton"
+shortcut = SubResource("Shortcut_mssb2")
+text = "<main>"
+icon = ExtResource("1_juh17")
+
+[node name="Edit Button" type="Button" parent="Box"]
+layout_mode = 2
+tooltip_text = "Set preset to current scene"
+theme_type_variation = &"FlatButton"
+shortcut = SubResource("Shortcut_l3dc2")
+icon = ExtResource("2_8u6u2")
+
+[connection signal="pressed" from="Box/Play Button" to="." method="play"]
+[connection signal="pressed" from="Box/Edit Button" to="." method="edit"]
