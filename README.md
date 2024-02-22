@@ -28,7 +28,5 @@ Nothing. All data is stored in `res://.godot/editor` so as long as that folder i
 Open `res://addons/run_preset/toolbar.tscn` and edit the shortcuts under the 'Play' and 'Edit' buttons. PRs welcome to integrate this with Godot's Editor Keyboard Shortcuts menu.
 
 
-### Why not use [gro-david/godot-custom-play-buttons
-
-](https://github.com/gro-david/godot-custom-play-buttons)?
+### Why not use [gro-david/godot-custom-play-buttons](https://github.com/gro-david/godot-custom-play-buttons)?
 > This plugin is faster to use and plays better with version control. Use the other plugin if more control is needed (such as multiple presets).
